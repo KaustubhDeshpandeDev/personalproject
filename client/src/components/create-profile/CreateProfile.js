@@ -143,7 +143,7 @@ class CreateProfile extends Component {
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname"
+                  info="A unique handle for your profile URL."
                 />
                 <SelectListGroup
                   placeholder="Status"
@@ -154,21 +154,21 @@ class CreateProfile extends Component {
                   error={errors.status}
                   info="Give us an idea of where you are at in your career"
                 />
-                <TextFieldGroup
-                  placeholder="Company"
+                {/* <TextFieldGroup
+                  placeholder="Primary"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
-                  info="Could be your own company or one you work for"
-                />
+                  info=""
+                /> */}
                 <TextFieldGroup
-                  placeholder="Website"
+                  placeholder="Hobbies"
                   name="website"
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own website or a company one"
+                  info=""
                 />
                 <TextFieldGroup
                   placeholder="Location"
@@ -185,16 +185,16 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                    Piano, Guitar, Vocals etc)"
                 />
-                <TextFieldGroup
-                  placeholder="Github Username"
+                {/* <TextFieldGroup
+                  placeholder=""
                   name="githubusername"
                   value={this.state.githubusername}
                   onChange={this.onChange}
                   error={errors.githubusername}
                   info="If you want your latest repos and a Github link, include your username"
-                />
+                /> */}
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"
