@@ -16,19 +16,20 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
   }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
+
     if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
+      this.setState({ errors: nextProps.errors });
     }
   }
 
@@ -57,7 +58,7 @@ class Login extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Log In</h1>
               <p className="lead text-center">
-                Sign in to your Music Connection account
+                Sign in to your DevConnector account
               </p>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -68,6 +69,7 @@ class Login extends Component {
                   onChange={this.onChange}
                   error={errors.email}
                 />
+
                 <TextFieldGroup
                   placeholder="Password"
                   name="password"
@@ -86,10 +88,10 @@ class Login extends Component {
   }
 }
 
-loginUser.PropTypes = {
+Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

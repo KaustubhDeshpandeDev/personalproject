@@ -4,39 +4,30 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 
 class Landing extends Component {
-  // componentDidMount() {
-  //   if (this.props.auth.isAuthenticated) {
-  //     this.props.history.push("/dashboard");
-  //   }
-  // }
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
 
   render() {
     return (
-      <div>
-        <div id="particles-js" />
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" />
-        <script />
-        <div className="landing">
-          <div className="dark-overlay landing-inner text-light">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12 text-center">
-                  <h1 className="display-3mb-4">The Music Connection</h1>
-                  <p className="lead">
-                    {" "}
-                    Interact with students and wefawefwefafe
-                  </p>
-                  <hr />
-                  <Link
-                    to="/register"
-                    className="btn btn-lg btn-outline-light mr-2"
-                  >
-                    Sign Up
-                  </Link>
-                  <Link to="/login" className="btn btn-lg btn-outline-info">
-                    Login
-                  </Link>
-                </div>
+      <div className="landing">
+        <div className="dark-overlay landing-inner text-light">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h1 className="display-4 mb-3 color text-info">
+                  The Music Connection
+                </h1>
+                <p className="lead"> Interact with peers and instructors</p>
+                <hr />
+                <Link to="/register" className="btn btn-lg btn-info mr-2">
+                  Sign Up
+                </Link>
+                <Link to="/login" className="btn btn-lg btn-dark">
+                  Login
+                </Link>
               </div>
             </div>
           </div>
