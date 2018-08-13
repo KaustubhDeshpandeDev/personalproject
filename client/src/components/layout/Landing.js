@@ -20,7 +20,10 @@ class Landing extends Component {
                 <h1 className="display-4 mb-3 color text-info">
                   The Music Connection
                 </h1>
-                <p className="lead"> Interact with peers and instructors</p>
+                <p className="lead text-muted">
+                  {" "}
+                  Interact with students and instructors
+                </p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">
                   Sign Up
