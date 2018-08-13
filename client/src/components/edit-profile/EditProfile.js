@@ -145,14 +145,14 @@ class CreateProfile extends Component {
             error={errors.facebook}
           />
 
-          <InputGroup
+          {/* <InputGroup
             placeholder="Linkedin Profile URL"
             name="linkedin"
             icon="fab fa-linkedin"
             value={this.state.linkedin}
             onChange={this.onChange}
             error={errors.linkedin}
-          />
+          /> */}
 
           <InputGroup
             placeholder="YouTube Channel URL"
@@ -177,15 +177,15 @@ class CreateProfile extends Component {
 
     // Select options for status
     const options = [
-      { label: "* Select Professional Status", value: 0 },
-      { label: "Developer", value: "Developer" },
-      { label: "Junior Developer", value: "Junior Developer" },
-      { label: "Senior Developer", value: "Senior Developer" },
-      { label: "Manager", value: "Manager" },
-      { label: "Student or Learning", value: "Student or Learning" },
-      { label: "Instructor or Teacher", value: "Instructor or Teacher" },
-      { label: "Intern", value: "Intern" },
-      { label: "Other", value: "Other" }
+      { label: "* Student or Instructor", value: 0 },
+      // { label: "Developer", value: "Developer" },
+      // { label: "Junior Developer", value: "Junior Developer" },
+      // { label: "Senior Developer", value: "Senior Developer" },
+      // { label: "Manager", value: "Manager" },
+      { label: "Student", value: "Student" },
+      { label: "Instructor", value: "Instructor" }
+      // { label: "Intern", value: "Intern" },
+      // { label: "Other", value: "Other" }
     ];
 
     return (
@@ -197,7 +197,7 @@ class CreateProfile extends Component {
                 Go Back
               </Link>
               <h1 className="display-4 text-center">Edit Profile</h1>
-              <small className="d-block pb-3">* = required fields</small>
+              {/* <small className="d-block pb-3">* = required fields</small> */}
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
@@ -205,7 +205,7 @@ class CreateProfile extends Component {
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname"
+                  // info="A unique handle for your profile URL. Your full name, company name, nickname"
                 />
                 <SelectListGroup
                   placeholder="Status"
@@ -214,15 +214,15 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   options={options}
                   error={errors.status}
-                  info="Give us an idea of where you are at in your career"
+                  // info="Give us an idea of where you are at in your career"
                 />
-                <TextFieldGroup
+                {/* <TextFieldGroup
                   placeholder="Company"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
-                  info="Could be your own company or one you work for"
+                  // info="Could be your own company or one you work for"
                 />
                 <TextFieldGroup
                   placeholder="Website"
@@ -230,15 +230,15 @@ class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own website or a company one"
-                />
+                  // info="Could be your own website or a company one"
+                /> */}
                 <TextFieldGroup
                   placeholder="Location"
                   name="location"
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City or city & state suggested (eg. Boston, MA)"
+                  // info="City or city & state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
                   placeholder="* Skills"
@@ -246,24 +246,24 @@ class CreateProfile extends Component {
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
-                  info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                  // info="Please use comma separated values (eg.
+                  //   HTML,CSS,JavaScript,PHP"
                 />
-                <TextFieldGroup
+                {/* <TextFieldGroup
                   placeholder="Github Username"
                   name="githubusername"
                   value={this.state.githubusername}
                   onChange={this.onChange}
                   error={errors.githubusername}
-                  info="If you want your latest repos and a Github link, include your username"
-                />
+                  // info="If you want your latest repos and a Github link, include your username"
+                /> */}
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"
                   value={this.state.bio}
                   onChange={this.onChange}
                   error={errors.bio}
-                  info="Tell us a little about yourself"
+                  // info="Tell us a little about yourself"
                 />
 
                 <div className="mb-3">

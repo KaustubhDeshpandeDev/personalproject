@@ -70,33 +70,31 @@ class AddExperience extends Component {
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 className="display-4 text-center">Add Experience</h1>
-              <p className="lead text-center">
-                Add any job or position that you have had in the past or current
-              </p>
-              <small className="d-block pb-3">* = required fields</small>
+              <h5 className="display-5 text-center">Add Music/ABRSM Piece</h5>
+              <p className="lead text-center">{""}</p>
+              {/* <small className="d-block pb-3">* = required fields</small> */}
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* Company"
+                  placeholder="* Song or ABRSM level"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
                 />
                 <TextFieldGroup
-                  placeholder="* Job Title"
+                  placeholder="* Composer"
                   name="title"
                   value={this.state.title}
                   onChange={this.onChange}
                   error={errors.title}
                 />
-                <TextFieldGroup
+                {/* <TextFieldGroup
                   placeholder="Location"
                   name="location"
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                />
+                /> */}
                 <h6>From Date</h6>
                 <TextFieldGroup
                   name="from"
@@ -114,7 +112,7 @@ class AddExperience extends Component {
                   error={errors.to}
                   disabled={this.state.disabled ? "disabled" : ""}
                 />
-                <div className="form-check mb-4">
+                {/* <div className="form-check mb-4">
                   <input
                     type="checkbox"
                     className="form-check-input"
@@ -127,14 +125,14 @@ class AddExperience extends Component {
                   <label htmlFor="current" className="form-check-label">
                     Current Job
                   </label>
-                </div>
+                </div> */}
                 <TextAreaFieldGroup
-                  placeholder="Job Description"
+                  placeholder="Song Description"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}
                   error={errors.description}
-                  info="Tell us about the the position"
+                  // info="Tell us about the the position"
                 />
                 <input
                   type="submit"

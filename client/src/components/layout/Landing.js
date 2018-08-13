@@ -17,7 +17,7 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-4 mb-3 color text-info">
+                <h1 className="display-4 m-3 color text-info">
                   The Music Connection
                 </h1>
                 <p className="lead text-muted">

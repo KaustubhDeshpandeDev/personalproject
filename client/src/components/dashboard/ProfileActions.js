@@ -8,13 +8,13 @@ const ProfileActions = () => {
         <i className="fas fa-user-circle text-info mr-1" /> Edit Profile
       </Link>
       <Link to="/add-experience" className="btn btn-light">
-        <i className="fab fa-black-tie text-info mr-1" />
-        Add Experience
+        <i className="fas fa-music text-info mr-1" />
+        Add recently learned songs
       </Link>
-      <Link to="/add-education" className="btn btn-light">
+      {/* <Link to="/add-education" className="btn btn-light">
         <i className="fas fa-graduation-cap text-info mr-1" />
         Add Education
-      </Link>
+      </Link> */}
     </div>
   );
 };
