@@ -59,6 +59,10 @@ router.get("/all", (req, res) => {
     .catch(err => res.status(404).json({ profile: "There are no profiles" }));
 });
 
+router.get("/test", res => {
+  res.json(console.log("Welcome to the music connection"));
+});
+
 // @route   GET api/profile/handle/:handle
 // @desc    Get profile by handle
 // @access  Public
@@ -165,6 +169,8 @@ router.post(
     });
   }
 );
+
+//
 
 // @route   POST api/profile/experience
 // @desc    Add experience to profile

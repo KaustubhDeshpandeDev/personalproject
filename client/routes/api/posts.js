@@ -63,6 +63,28 @@ router.post(
   }
 );
 
+router.put(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      Post.findById(req.params.id)
+        .then(post => {
+          // Check for post owner
+          if (post.user.toString() !== req.user.id) {
+            return res
+              .status(401)
+              .json({ notauthorized: "User not authorized" });
+          }
+
+          // Delete
+          post.post.update(req.body).then(() => res.json({ success: true }));
+        })
+        .catch(err => res.status(404).json({ postnotfound: "No post found" }));
+    });
+  }
+);
+
 // @route   DELETE api/posts/:id
 // @desc    Delete post
 // @access  Private
@@ -81,7 +103,7 @@ router.delete(
           }
 
           // Delete
-          post.remove().then(() => res.json({ success: true }));
+          post.post.remove().then(() => res.json({ success: true }));
         })
         .catch(err => res.status(404).json({ postnotfound: "No post found" }));
     });

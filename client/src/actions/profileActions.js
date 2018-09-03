@@ -140,6 +140,13 @@ export const getProfiles = () => dispatch => {
       })
     );
 };
+// just make something pop up on the window
+export const testPut = () => {
+  axios
+    .get("/api/profile/test")
+    .then(console.log("test"))
+    .catch();
+};
 
 // Delete account & profile
 export const deleteAccount = () => dispatch => {

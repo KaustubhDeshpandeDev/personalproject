@@ -3,11 +3,19 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import { deletePost, addLike, removeLike } from "../../actions/postActions";
+import {
+  editPost,
+  deletePost,
+  addLike,
+  removeLike
+} from "../../actions/postActions";
 
 class PostItem extends Component {
   onDeleteClick(id) {
     this.props.deletePost(id);
+  }
+  onEditClick(id) {
+    this.props.editPost(id);
   }
 
   onLikeClick(id) {
@@ -25,6 +33,10 @@ class PostItem extends Component {
     } else {
       return false;
     }
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
@@ -67,9 +79,6 @@ class PostItem extends Component {
                 >
                   <i className="text-secondary fas fa-thumbs-down" />
                 </button>
-                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
-                  Comments
-                </Link>
                 {post.user === auth.user.id ? (
                   <button
                     onClick={this.onDeleteClick.bind(this, post._id)}
@@ -79,6 +88,25 @@ class PostItem extends Component {
                     <i className="fas fa-times" />
                   </button>
                 ) : null}
+                {post.user === auth.user.id ? (
+                  <button
+                    onClick={this.onEditClick.bind(this, post._id)}
+                    type="button"
+                    className="btn btn-dark mr-1"
+                  >
+                    Edit
+                    <textarea
+                      className={classnames(
+                        "form-control form-control-small",
+                        "is-invalid"
+                      )}
+                      placeholder="Edit Text"
+                    />
+                  </button>
+                ) : null}
+                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
+                  Comments
+                </Link>
               </span>
             ) : null}
           </div>
@@ -94,6 +122,7 @@ PostItem.defaultProps = {
 
 PostItem.propTypes = {
   deletePost: PropTypes.func.isRequired,
+  editPost: PropTypes.func.isRequired,
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
@@ -106,5 +135,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { deletePost, addLike, removeLike }
+  { deletePost, addLike, removeLike, editPost }
 )(PostItem);

@@ -7,7 +7,8 @@ import {
   GET_POSTS,
   GET_POST,
   POST_LOADING,
-  DELETE_POST
+  DELETE_POST,
+  EDIT_POST
 } from "./types";
 
 // Add Post
@@ -120,6 +121,58 @@ export const addComment = (postId, commentData) => dispatch => {
       dispatch({
         type: GET_POST,
         payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+// export const addPost = postData => dispatch => {
+//   dispatch(clearErrors());
+//   axios
+//     .post("/api/posts", postData)
+//     .then(res =>
+//       dispatch({
+//         type: ADD_POST,
+//         payload: res.data
+//       })
+//     )
+//     .catch(err =>
+//       dispatch({
+//         type: GET_ERRORS,
+//         payload: err.response.data
+//       })
+//     );
+// };
+// Delete Post
+// export const deletePost = id => dispatch => {
+//   axios
+//     .delete(`/api/posts/${id}`)
+//     .then(res =>
+//       dispatch({
+//         type: DELETE_POST,
+//         payload: id
+//       })
+//     )
+//     .catch(err =>
+//       dispatch({
+//         type: GET_ERRORS,
+//         payload: err.response.data
+//       })
+//     );
+// };
+
+//edit comment
+export const editPost = (id, editData) => dispatch => {
+  axios
+    .put(`/api/posts/${id}`, editData)
+    .then(res =>
+      dispatch({
+        type: EDIT_POST,
+        payload: (res.data, id)
       })
     )
     .catch(err =>
