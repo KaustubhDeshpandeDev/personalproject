@@ -88,7 +88,7 @@ class PostItem extends Component {
                     <i className="fas fa-times" />
                   </button>
                 ) : null}
-                {post.user === auth.user.id ? (
+                {/* {post.user === auth.user.id ? (
                   <button
                     onClick={this.onEditClick.bind(this, post._id)}
                     type="button"
@@ -103,7 +103,7 @@ class PostItem extends Component {
                       placeholder="Edit Text"
                     />
                   </button>
-                ) : null}
+                ) : null} */}
                 <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
                   Comments
                 </Link>
@@ -137,3 +137,5 @@ export default connect(
   mapStateToProps,
   { deletePost, addLike, removeLike, editPost }
 )(PostItem);
+
+///come back and work on the edit features
