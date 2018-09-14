@@ -13,14 +13,14 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <div className="dark-overlay landing-inner text-light">
+        <div className="landing-inner text-light">
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-6 m-3 color text-info">
+                <h1 className="display-6 m-3 color text-light">
                   The Music Connection
                 </h1>
-                <p className="lead text-muted">
+                <p className="lead text-secondary">
                   {" "}
                   Interact with students and instructors
                 </p>

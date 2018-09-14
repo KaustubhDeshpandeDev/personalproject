@@ -62,7 +62,7 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-0">
         <div className="container">
           <Link className="navbar-brand text-muted" to="/">
             Music Connection
